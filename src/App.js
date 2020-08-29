@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';//usecase hook
+import TodoList from './TodoList'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [todos,setTodos]=useState(['Todo1','Todo2'])//usecase returns an arrow 
+  return(
+    <>
+    <TodoList todos = {todos} />
+    < input type="text" />
+    <button>Add Stuff</button>
+    <button>Remove Stuff</button>
+    <div>0 Left to do</div>
+    </>
+  )
 }
 
 export default App;
